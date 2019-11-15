@@ -14,6 +14,11 @@ import au.com.origma.perspectiveapi.v1alpha1.models.Entry;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
+/**
+ * The default implementation of the PerspectiveAPI client, made using the Unirest library
+ * 
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
+ */
 public class UnirestPerspectiveAPI implements PerspectiveAPI {
 	
 	String apiKey;

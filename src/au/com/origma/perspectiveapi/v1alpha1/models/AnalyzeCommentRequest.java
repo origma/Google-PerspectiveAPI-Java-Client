@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * A request to analyze a string of text for attributes
- * @author Ben McLean &gt; ben@origma.com.au &lt;
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
  */
 public class AnalyzeCommentRequest {
 	
@@ -93,7 +93,7 @@ public class AnalyzeCommentRequest {
 	/**
 	 * Builds an AnalyzeCommentRequest
 	 * 
-	 * @author Ben McLean &gt; ben@origma.com.au &lt;
+	 * @author Ben McLean &lt;ben@origma.com.au&gt;
 	 *
 	 */
 	public static class Builder {
@@ -213,7 +213,7 @@ public class AnalyzeCommentRequest {
 
 		/**
 		 * Build and create a new instance of AnalyzeCommentRequest
-		 * @return
+		 * @return The builder
 		 */
 		public AnalyzeCommentRequest build() {
 			return new AnalyzeCommentRequest(this);
