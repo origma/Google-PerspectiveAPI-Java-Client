@@ -37,7 +37,7 @@ To understand the models and their functions, see https://github.com/conversatio
   <repository>
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
-   </repository>
+  </repository>
 </repositories>
 ```
 
