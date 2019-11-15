@@ -146,7 +146,7 @@ public class AnalyzeCommentRequest {
 			if(requestedAttribute != null){
 				requestedAttributes.put(type, requestedAttribute);
 			}else{
-				requestedAttributes.put(type, new RequestedAttribute());
+				requestedAttributes.put(type, new RequestedAttribute.Builder().build());
 			}
 			return this;
 		}

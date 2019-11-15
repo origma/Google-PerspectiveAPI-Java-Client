@@ -6,6 +6,12 @@
  */
 package au.com.origma.perspectiveapi.v1alpha1.models;
 
+/**
+ * The form a score takes
+ * 
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
+ *
+ */
 public enum ScoreType {
 	PROBABILITY
 }
