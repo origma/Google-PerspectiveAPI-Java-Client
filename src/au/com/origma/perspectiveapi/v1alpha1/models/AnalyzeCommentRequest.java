@@ -130,7 +130,11 @@ public class AnalyzeCommentRequest {
 		}
 		
 		public Builder addRequestedAttribute(AttributeType type, RequestedAttribute requestedAttribute) {
-			requestedAttributes.put(type, requestedAttribute);
+			if(requestedAttribute != null){
+				requestedAttributes.put(type, requestedAttribute);
+			}else{
+				requestedAttributes.put(type, new RequestedAttribute());
+			}
 			return this;
 		}
 
