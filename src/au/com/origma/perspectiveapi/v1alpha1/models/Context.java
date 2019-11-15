@@ -25,6 +25,12 @@ public class Context {
 		return entries;
 	}
 
+	/**
+	 * Builds a Context
+	 * 
+	 * @author Ben McLean &lt;ben@origma.com.au&gt;
+	 *
+	 */
 	public static class Builder {
 		private List<Entry> entries;
 
