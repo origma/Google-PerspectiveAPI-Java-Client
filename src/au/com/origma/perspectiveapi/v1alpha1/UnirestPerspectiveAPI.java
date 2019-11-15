@@ -46,6 +46,7 @@ public class UnirestPerspectiveAPI implements PerspectiveAPI {
 						.type(ContentType.PLAIN_TEXT)
 						.text(comment)
 						.build())
+				.doNotStore(doNotStore)
 				.build());
 	}
 
