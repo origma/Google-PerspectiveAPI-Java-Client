@@ -40,3 +40,7 @@ To understand the models and their functions, see https://github.com/conversatio
    </repository>
 </repositories>
 ```
+
+## See Also
+* [Google API Reference](https://github.com/conversationai/perspectiveapi/tree/master/2-api)
+* [JavaDoc](https://origma.com.au/docs/perspectiveapi)
