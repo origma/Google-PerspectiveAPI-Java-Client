@@ -11,6 +11,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A request to analyze a string of text for attributes
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
+ */
 public class AnalyzeCommentRequest {
 	
 	Entry comment;
@@ -21,89 +25,77 @@ public class AnalyzeCommentRequest {
 	String clientToken;
 	String sessionId;
 	Double suggestCommentScore;
-
-	public AnalyzeCommentRequest() {
-		super();
-	}
-
-	public AnalyzeCommentRequest(Entry comment, Context context, Map<AttributeType, RequestedAttribute> requestedAttributes,
-			List<String> languages, Boolean doNotStore, String clientToken, String sessionId,
-			Double suggestCommentScore) {
-		super();
-		this.comment = comment;
-		this.context = context;
-		this.requestedAttributes = requestedAttributes;
-		this.languages = languages;
-		this.doNotStore = doNotStore;
-		this.clientToken = clientToken;
-		this.sessionId = sessionId;
-		this.suggestCommentScore = suggestCommentScore;
-	}
-
+	
+	/**
+	 * Returns the comment to be analyzed by the request
+	 * @return
+	 */
 	public Entry getComment() {
 		return comment;
 	}
 
-	public void setComment(Entry comment) {
-		this.comment = comment;
-	}
-
+	/**
+	 * Returns the content of the request
+	 * @return the content of the request
+	 */
 	public Context getContext() {
 		return context;
 	}
 
-	public void setContext(Context context) {
-		this.context = context;
-	}
-
+	/**
+	 * Returns the attributes that will be requested
+	 * @return the attributes that will be requested
+	 */
 	public Map<AttributeType, RequestedAttribute> getRequestedAttributes() {
 		return requestedAttributes;
 	}
 
-	public void setRequestedAttributes(Map<AttributeType, RequestedAttribute> requestedAttributes) {
-		this.requestedAttributes = requestedAttributes;
-	}
-
+	/**
+	 * Returns the set languages for the request
+	 * @return the set languages for the request
+	 */
 	public List<String> getLanguages() {
 		return languages;
 	}
-
-	public void setLanguages(List<String> languages) {
-		this.languages = languages;
-	}
-
+	
+	/**
+	 * Returns whether the comment will be stored for analysis or not
+	 * @return whether the comment will be stored for analysis or not
+	 */
 	public Boolean getDoNotStore() {
 		return doNotStore;
 	}
 
-	public void setDoNotStore(Boolean doNotStore) {
-		this.doNotStore = doNotStore;
-	}
-
+	/**
+	 * Returns the client token of the request
+	 * @return the client token of the request
+	 */
 	public String getClientToken() {
 		return clientToken;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-	}
-
+	/**
+	 * Returns the session ID of the request
+	 * @return the session ID of the request
+	 */
 	public String getSessionId() {
 		return sessionId;
 	}
 
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-	}
-
+	/**
+	 * Returns the comment score suggested to the analyzer
+	 * @return the comment score suggested to the analyzer
+	 */
 	public Double getSuggestCommentScore() {
 		return suggestCommentScore;
 	}
 
-	public void setSuggestCommentScore(Double suggestCommentScore) {
-		this.suggestCommentScore = suggestCommentScore;
-	}
-
+	/**
+	 * Builds an AnalyzeCommentRequest
+	 * 
+	 * @author Ben McLean &lt;ben@origma.com.au&gt;
+	 *
+	 */
 	public static class Builder {
 		private Entry comment;
 		private Context context;
@@ -114,60 +106,115 @@ public class AnalyzeCommentRequest {
 		private String sessionId;
 		private Double suggestCommentScore;
 
+		/**
+		 * Set the comment of the future AnalyzeCommentRequest
+		 * @param comment the comment of the future AnalyzeCommentRequest
+		 * @return The builder
+		 */
 		public Builder comment(Entry comment) {
 			this.comment = comment;
 			return this;
 		}
 
+		/**
+		 * Set the context of the future AnalyzeCommentRequest
+		 * @param context the context of the future AnalyzeCommentRequest
+		 * @return The builder
+		 */
 		public Builder context(Context context) {
 			this.context = context;
 			return this;
 		}
 
+		/**
+		 * Set the requested attributes of the future AnalyzeCommentRequest
+		 * @param requestedAttributes the requested attributes of the future AnalyzeCommentRequest
+		 * @return The builder
+		 */
 		public Builder requestedAttributes(Map<AttributeType, RequestedAttribute> requestedAttributes) {
 			this.requestedAttributes = requestedAttributes;
 			return this;
 		}
 		
+		/**
+		 * Add a requested attribute to the future AnalyzeCommentRequest
+		 * @param type The type of the requested attribute
+		 * @param requestedAttribute The parameters of the requested attribute
+		 * @return The builder
+		 */
 		public Builder addRequestedAttribute(AttributeType type, RequestedAttribute requestedAttribute) {
 			if(requestedAttribute != null){
 				requestedAttributes.put(type, requestedAttribute);
 			}else{
-				requestedAttributes.put(type, new RequestedAttribute());
+				requestedAttributes.put(type, new RequestedAttribute.Builder().build());
 			}
 			return this;
 		}
 
+		/**
+		 * Set the languages of the future AnalyzeCommentRequest
+		 * @param languages the languages of the future AnalyzeCommentRequest in ISO 639-1
+		 * @return The builder
+		 */
 		public Builder languages(List<String> languages) {
 			this.languages = languages;
 			return this;
 		}
 		
+		/**
+		 * Add a language to the future AnalyzeCommentRequest
+		 * @param language The language in ISO 639-1
+		 * @return The builder
+		 */
 		public Builder addLanguage(String language){
 			languages.add(language);
 			return this;
 		}
 
+		/**
+		 * Set the do not store of the future AnalyzeCommentRequest
+		 * @param doNotStore the do not store of the future AnalyzeCommentRequest
+		 * @return The builder
+		 */
 		public Builder doNotStore(Boolean doNotStore) {
 			this.doNotStore = doNotStore;
 			return this;
 		}
 
+		/**
+		 * Set the client token of the future AnalyzeCommentRequest
+		 * @param clientToken the clientToken of the future AnalyzeCommentRequest
+		 * @return The builder
+		 */
 		public Builder clientToken(String clientToken) {
 			this.clientToken = clientToken;
 			return this;
 		}
 
+		/**
+		 * Set the session ID of the future AnalyzeCommentRequest
+		 * @param sessionId the sessionId of the future AnalyzeCommentRequest
+		 * @return The builder
+		 */
 		public Builder sessionId(String sessionId) {
 			this.sessionId = sessionId;
 			return this;
 		}
 
+		/**
+		 * Set the suggested comment score of the future AnalyzeCommentRequest
+		 * @param suggestCommentScore the suggested comment score of the future AnalyzeCommentRequest
+		 * @return The builder
+		 */
 		public Builder suggestCommentScore(Double suggestCommentScore) {
 			this.suggestCommentScore = suggestCommentScore;
 			return this;
 		}
 
+		/**
+		 * Build and create a new instance of AnalyzeCommentRequest
+		 * @return The builder
+		 */
 		public AnalyzeCommentRequest build() {
 			return new AnalyzeCommentRequest(this);
 		}

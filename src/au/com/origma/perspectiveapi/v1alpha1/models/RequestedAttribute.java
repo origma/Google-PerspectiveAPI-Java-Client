@@ -6,51 +6,66 @@
  */
 package au.com.origma.perspectiveapi.v1alpha1.models;
 
+/**
+ * Represents the parameters of a requested attribute
+ * 
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
+ *
+ */
 public class RequestedAttribute {
 
 	ScoreType scoreType;
 	Double scoreThreshold;
 
-	public RequestedAttribute() {
-		super();
-	}
-
-	public RequestedAttribute(ScoreType scoreType, Double scoreThreshold) {
-		super();
-		this.scoreType = scoreType;
-		this.scoreThreshold = scoreThreshold;
-	}
-
+	/**
+	 * Returns the score type of the attribute
+	 * @return the score type of the attribute
+	 */
 	public ScoreType getScoreType() {
 		return scoreType;
 	}
 
-	public void setScoreType(ScoreType scoreType) {
-		this.scoreType = scoreType;
-	}
-
+	/**
+	 * Returns the score threshold of the attribute
+	 * @return the score threshold of the attribute
+	 */
 	public Double getScoreThreshold() {
 		return scoreThreshold;
 	}
 
-	public void setScoreThreshold(Double scoreThreshold) {
-		this.scoreThreshold = scoreThreshold;
-	}
-
+	/**
+	 * Builds a RequestedAttribute
+	 * 
+	 * @author Ben McLean &lt;ben@origma.com.au&gt;
+	 */
 	public static class Builder {
 		private ScoreType scoreType;
 		private Double scoreThreshold;
 
+		/**
+		 * Sets the score type of the attribute
+		 * @param scoreType the score type of the attribute
+		 * @return The builder
+		 */
 		public Builder scoreType(ScoreType scoreType) {
 			this.scoreType = scoreType;
 			return this;
 		}
 
+		/**
+		 * Sets the score threshold of the attribute
+		 * @param scoreThreshold the score threshold of the attribute
+		 * @return The builder
+		 */
 		public Builder scoreThreshold(Double scoreThreshold) {
 			this.scoreThreshold = scoreThreshold;
 			return this;
 		}
 
+		/**
+		 * Builds a new instance of RequestedAttribute
+		 * @return a new instance of RequestedAttribute
+		 */
 		public RequestedAttribute build() {
 			return new RequestedAttribute(this);
 		}

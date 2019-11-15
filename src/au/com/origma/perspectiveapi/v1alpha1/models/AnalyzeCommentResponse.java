@@ -9,16 +9,28 @@ package au.com.origma.perspectiveapi.v1alpha1.models;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The response of an analysis
+ * 
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
+ *
+ */
 public class AnalyzeCommentResponse {
 
 	Map<AttributeType, AttributeScore> attributeScores;
 	List<String> languages;
 	String clientToken;
 	
+	/**
+	 * Create a new empty instance
+	 */
 	public AnalyzeCommentResponse() {
 		super();
 	}
 
+	/**
+	 * Create a new instance
+	 */
 	public AnalyzeCommentResponse(Map<AttributeType, AttributeScore> attributeScores, List<String> languages,
 			String clientToken) {
 		super();
@@ -27,30 +39,59 @@ public class AnalyzeCommentResponse {
 		this.clientToken = clientToken;
 	}
 
+	/**
+	 * Returns the scores of the requested attributes
+	 * @return the scores of the requested attributes
+	 */
 	public Map<AttributeType, AttributeScore> getAttributeScores() {
 		return attributeScores;
 	}
 	
+	/**
+	 * Returns a specific attribute score
+	 * @param type The attribute for which a score should be returned
+	 * @return a specific attribute score
+	 */
 	public AttributeScore getAttributeScore(AttributeType type){
 		return attributeScores.get(type);
 	}
 
+	/**
+	 * Sets the attribute scores
+	 * @param attributeScores the attribute scores
+	 */
 	public void setAttributeScores(Map<AttributeType, AttributeScore> attributeScores) {
 		this.attributeScores = attributeScores;
 	}
 
+	/**
+	 * Gets the languages the request was in
+	 * @return the languages the request was in
+	 */
 	public List<String> getLanguages() {
 		return languages;
 	}
 
+	/**
+	 * Sets the languages the request was in
+	 * @param languages the languages the request was in
+	 */
 	public void setLanguages(List<String> languages) {
 		this.languages = languages;
 	}
 
+	/**
+	 * Gets the client token
+	 * @return the client token
+	 */
 	public String getClientToken() {
 		return clientToken;
 	}
 
+	/**
+	 * Sets the client token
+	 * @param clientToken the client token
+	 */
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 	}
