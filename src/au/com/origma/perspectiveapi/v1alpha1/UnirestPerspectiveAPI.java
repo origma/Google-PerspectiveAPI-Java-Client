@@ -22,6 +22,8 @@ import au.com.origma.perspectiveapi.v1alpha1.models.AnalyzeCommentResponse;
 import au.com.origma.perspectiveapi.v1alpha1.models.AttributeType;
 import au.com.origma.perspectiveapi.v1alpha1.models.ContentType;
 import au.com.origma.perspectiveapi.v1alpha1.models.Entry;
+import au.com.origma.perspectiveapi.v1alpha1.models.SuggestScoreRequest;
+import au.com.origma.perspectiveapi.v1alpha1.models.SuggestScoreResponse;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 
@@ -68,6 +70,20 @@ public class UnirestPerspectiveAPI implements PerspectiveAPI {
 						.build())
 				.doNotStore(doNotStore)
 				.build());
+	}
+	
+	@Override
+	public SuggestScoreResponse suggestScore(SuggestScoreRequest request) {
+		HttpResponse<SuggestScoreResponse> response = Unirest.post(SUGGEST_ENDPOINT)
+				.queryString("key", apiKey)
+				.body(request)
+				.asObject(SuggestScoreResponse.class);
+			
+			if(!response.isSuccess()){
+				return null;
+			}
+			
+			return response.getBody();
 	}
 
 	/**

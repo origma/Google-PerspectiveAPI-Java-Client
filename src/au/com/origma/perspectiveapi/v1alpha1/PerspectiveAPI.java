@@ -19,6 +19,8 @@ package au.com.origma.perspectiveapi.v1alpha1;
 
 import au.com.origma.perspectiveapi.v1alpha1.models.AnalyzeCommentRequest;
 import au.com.origma.perspectiveapi.v1alpha1.models.AnalyzeCommentResponse;
+import au.com.origma.perspectiveapi.v1alpha1.models.SuggestScoreRequest;
+import au.com.origma.perspectiveapi.v1alpha1.models.SuggestScoreResponse;
 
 /**
  * Interact with Google's PerspectiveAPI to analyze comments and content.<br>
@@ -35,6 +37,11 @@ public interface PerspectiveAPI {
 	public static final String ANALYZE_ENDPOINT = "https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze";
 	
 	/**
+	 * The endpoint to which suggestion requests are sent
+	 */
+	public static final String SUGGEST_ENDPOINT = "https://commentanalyzer.googleapis.com/v1alpha1/comments:suggestscore";
+	
+	/**
 	 * Analyze a comment
 	 * @param request The request
 	 * @return The analysis of the request
@@ -47,6 +54,13 @@ public interface PerspectiveAPI {
 	 * @return The analysis of the request
 	 */
 	public AnalyzeCommentResponse analyze(String comment);
+	
+	/**
+	 * Suggest a score for a comment
+	 * @param request The request
+	 * @return The response
+	 */
+	public SuggestScoreResponse suggestScore(SuggestScoreRequest request);
 	
 	/**
 	 * Instantiate the default implementation of the PerspectiveAPI
