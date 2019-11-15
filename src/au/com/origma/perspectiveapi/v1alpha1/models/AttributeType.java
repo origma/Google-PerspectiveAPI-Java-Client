@@ -6,6 +6,12 @@
  */
 package au.com.origma.perspectiveapi.v1alpha1.models;
 
+/**
+ * Represents the types of attributes that can be analysed in any given request
+ * 
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
+ *
+ */
 public enum AttributeType {
 
 	TOXICITY, 
