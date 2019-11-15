@@ -28,7 +28,7 @@ To understand the models and their functions, see https://github.com/conversatio
 <dependency>
   <groupId>com.github.origma</groupId>
   <artifactId>Google-PerspectiveAPI-Java-Client</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.5</version>
 </dependency>
 ```
 ...
