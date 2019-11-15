@@ -24,6 +24,10 @@ public class UnirestPerspectiveAPI implements PerspectiveAPI {
 	String apiKey;
 	boolean doNotStore = true;
 
+	/**
+	 * Create a new instance of UnirestPerspectiveAPI
+	 * @param apiKey Your Google API Key
+	 */
 	public UnirestPerspectiveAPI(String apiKey) {
 		super();
 		this.apiKey = apiKey;
@@ -54,10 +58,18 @@ public class UnirestPerspectiveAPI implements PerspectiveAPI {
 				.build());
 	}
 
+	/**
+	 * If the simple analysis will default to do not store
+	 * @return the simple analysis will default to do not store
+	 */
 	public boolean isDoNotStore() {
 		return doNotStore;
 	}
 
+	/**
+	 * The default do not store setting
+	 * @param doNotStore The default do not store setting
+	 */
 	public void setDoNotStore(boolean doNotStore) {
 		this.doNotStore = doNotStore;
 	}
