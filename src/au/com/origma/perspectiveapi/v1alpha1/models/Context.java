@@ -8,35 +8,40 @@ package au.com.origma.perspectiveapi.v1alpha1.models;
 
 import java.util.List;
 
+/**
+ * Context surrounding the request
+ * 
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
+ */
 public class Context {
 
 	List<Entry> entries;
 
-	public Context() {
-		super();
-	}
-
-	public Context(List<Entry> entries) {
-		super();
-		this.entries = entries;
-	}
-
+	/**
+	 * Returns the context entries
+	 * @return the context entries
+	 */
 	public List<Entry> getEntries() {
 		return entries;
-	}
-
-	public void setEntries(List<Entry> entries) {
-		this.entries = entries;
 	}
 
 	public static class Builder {
 		private List<Entry> entries;
 
+		/**
+		 * Sets the context entries
+		 * @param entries the context entries
+		 * @return The builder
+		 */
 		public Builder entries(List<Entry> entries) {
 			this.entries = entries;
 			return this;
 		}
 
+		/**
+		 * Returns a new instance of Context
+		 * @return a new instance of Context
+		 */
 		public Context build() {
 			return new Context(this);
 		}

@@ -6,9 +6,21 @@
  */
 package au.com.origma.perspectiveapi.v1alpha1.models;
 
+/**
+ * The format the content is in
+ * 
+ * @author Ben McLean &lt;ben@origma.com.au&gt;
+ *
+ */
 public enum ContentType {
 
+	/**
+	 * The content is in plain text
+	 */
 	PLAIN_TEXT, 
+	/**
+	 * Not currently supported
+	 */
 	@Deprecated
 	HTML;
 	
