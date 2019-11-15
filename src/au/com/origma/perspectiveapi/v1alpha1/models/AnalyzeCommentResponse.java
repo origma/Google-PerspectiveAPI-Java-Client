@@ -31,7 +31,7 @@ public class AnalyzeCommentResponse {
 	Map<AttributeType, AttributeScore> attributeScores;
 	List<String> languages;
 	String clientToken;
-	
+
 	/**
 	 * Create a new empty instance
 	 */
@@ -51,24 +51,28 @@ public class AnalyzeCommentResponse {
 	}
 
 	/**
-	 * Returns the scores of the requested attributes
+	 * A map from model attribute name to per-attribute score objects. The attribute
+	 * names will mirror the request's requestedAttributes.
+	 * 
 	 * @return the scores of the requested attributes
 	 */
 	public Map<AttributeType, AttributeScore> getAttributeScores() {
 		return attributeScores;
 	}
-	
+
 	/**
 	 * Returns a specific attribute score
+	 * 
 	 * @param type The attribute for which a score should be returned
 	 * @return a specific attribute score
 	 */
-	public AttributeScore getAttributeScore(AttributeType type){
+	public AttributeScore getAttributeScore(AttributeType type) {
 		return attributeScores.get(type);
 	}
 
 	/**
 	 * Sets the attribute scores
+	 * 
 	 * @param attributeScores the attribute scores
 	 */
 	public void setAttributeScores(Map<AttributeType, AttributeScore> attributeScores) {
@@ -76,7 +80,9 @@ public class AnalyzeCommentResponse {
 	}
 
 	/**
-	 * Gets the languages the request was in
+	 * Mirrors the request's languages. If no languages were specified, the API
+	 * returns the auto-detected language.
+	 * 
 	 * @return the languages the request was in
 	 */
 	public List<String> getLanguages() {
@@ -85,6 +91,7 @@ public class AnalyzeCommentResponse {
 
 	/**
 	 * Sets the languages the request was in
+	 * 
 	 * @param languages the languages the request was in
 	 */
 	public void setLanguages(List<String> languages) {
@@ -92,7 +99,8 @@ public class AnalyzeCommentResponse {
 	}
 
 	/**
-	 * Gets the client token
+	 * Mirrors the request's clientToken.
+	 * 
 	 * @return the client token
 	 */
 	public String getClientToken() {
@@ -101,10 +109,11 @@ public class AnalyzeCommentResponse {
 
 	/**
 	 * Sets the client token
+	 * 
 	 * @param clientToken the client token
 	 */
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 	}
-	
+
 }

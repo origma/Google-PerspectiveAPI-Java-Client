@@ -29,7 +29,7 @@ public class AttributeScore {
 
 	Score summaryScore;
 	List<SpanScore> spanScores;
-	
+
 	/**
 	 * Create an empty instance
 	 */
@@ -47,7 +47,10 @@ public class AttributeScore {
 	}
 
 	/**
-	 * Returns the summary of all span scores
+	 * The model attribute summary score for the entire comment. All attributes will
+	 * return a summaryScore (unless the request specified a scoreThreshold for the
+	 * attribute that the summaryScore did not exceed).
+	 * 
 	 * @return the summary of all span scores
 	 */
 	public Score getSummaryScore() {
@@ -56,6 +59,7 @@ public class AttributeScore {
 
 	/**
 	 * Sets the summary of all span scores
+	 * 
 	 * @param summaryScore the summary of all span scores
 	 */
 	public void setSummaryScore(Score summaryScore) {
@@ -63,7 +67,10 @@ public class AttributeScore {
 	}
 
 	/**
-	 * Returns the scores of spans
+	 * A list of per-span scores for this attribute. These scores apply to different
+	 * parts of the request's comment.text. Note: Some attributes may not return
+	 * spanScores at all.
+	 * 
 	 * @return the scores of spans
 	 */
 	public List<SpanScore> getSpanScores() {
@@ -72,10 +79,11 @@ public class AttributeScore {
 
 	/**
 	 * Sets the scores of spans
+	 * 
 	 * @param spanScores the scores of spans
 	 */
 	public void setSpanScores(List<SpanScore> spanScores) {
 		this.spanScores = spanScores;
 	}
-	
+
 }

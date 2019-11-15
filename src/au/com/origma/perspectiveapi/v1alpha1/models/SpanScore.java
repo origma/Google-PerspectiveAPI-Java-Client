@@ -16,6 +16,7 @@
  * Written by Ben McLean <ben@origma.com.au>, November 2019
  */
 package au.com.origma.perspectiveapi.v1alpha1.models;
+
 /**
  * A score representing a span of the analyzed comment
  * 
@@ -27,11 +28,12 @@ public class SpanScore {
 	int begin;
 	int end;
 	Score score;
-	
+
 	/**
 	 * Create an empty instance
 	 */
-	public SpanScore(){}
+	public SpanScore() {
+	}
 
 	/**
 	 * Create an instance
@@ -44,7 +46,8 @@ public class SpanScore {
 	}
 
 	/**
-	 * Returns the beginning position of the span
+	 * Beginning of the text span in the request comment.
+	 * 
 	 * @return the beginning position of the span
 	 */
 	public int getBegin() {
@@ -53,6 +56,7 @@ public class SpanScore {
 
 	/**
 	 * Sets the beginning position of the span
+	 * 
 	 * @param begin the beginning position of the span
 	 */
 	public void setBegin(int begin) {
@@ -60,7 +64,8 @@ public class SpanScore {
 	}
 
 	/**
-	 * Returns the ending position of the span
+	 * End of the text span in the request comment.
+	 * 
 	 * @return the ending position of the span
 	 */
 	public int getEnd() {
@@ -69,6 +74,7 @@ public class SpanScore {
 
 	/**
 	 * Sets the ending position of the span
+	 * 
 	 * @param end the ending position of the span
 	 */
 	public void setEnd(int end) {
@@ -77,6 +83,7 @@ public class SpanScore {
 
 	/**
 	 * Returns the score of the span
+	 * 
 	 * @return the score of the span
 	 */
 	public Score getScore() {
@@ -85,10 +92,11 @@ public class SpanScore {
 
 	/**
 	 * Sets the score of the span
+	 * 
 	 * @param score the score of the span
 	 */
 	public void setScore(Score score) {
 		this.score = score;
 	}
-	
+
 }

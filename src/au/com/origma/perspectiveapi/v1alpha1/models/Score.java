@@ -26,12 +26,13 @@ public class Score {
 
 	float value;
 	ScoreType type;
-	
+
 	/**
 	 * Create an empty instance
 	 */
-	public Score(){}
-	
+	public Score() {
+	}
+
 	/**
 	 * Create an instance
 	 */
@@ -43,6 +44,7 @@ public class Score {
 
 	/**
 	 * Returns the value of a score
+	 * 
 	 * @return the value of a score
 	 */
 	public float getValue() {
@@ -51,6 +53,7 @@ public class Score {
 
 	/**
 	 * Sets the value of a score
+	 * 
 	 * @param value the value of a score
 	 */
 	public void setValue(float value) {
@@ -59,6 +62,7 @@ public class Score {
 
 	/**
 	 * Returns the type of a score
+	 * 
 	 * @return the type of a score
 	 */
 	public ScoreType getType() {
@@ -67,10 +71,11 @@ public class Score {
 
 	/**
 	 * Sets the type of a score
+	 * 
 	 * @param type the type of a score
 	 */
 	public void setType(ScoreType type) {
 		this.type = type;
 	}
-	
+
 }
