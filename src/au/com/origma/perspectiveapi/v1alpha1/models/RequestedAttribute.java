@@ -27,9 +27,12 @@ public class RequestedAttribute {
 
 	ScoreType scoreType;
 	Double scoreThreshold;
+	Boolean spanAnnotations;
 
 	/**
-	 * Returns the score type of the attribute
+	 * The score type returned for this model attribute. Currently, only
+	 * "PROBABILITY" is supported. Probability scores are in the range [0,1]
+	 * 
 	 * @return the score type of the attribute
 	 */
 	public ScoreType getScoreType() {
@@ -37,11 +40,24 @@ public class RequestedAttribute {
 	}
 
 	/**
-	 * Returns the score threshold of the attribute
+	 * The API won't return scores that are below this threshold for this model
+	 * attribute. By default, all scores are returned.
+	 * 
 	 * @return the score threshold of the attribute
 	 */
 	public Double getScoreThreshold() {
 		return scoreThreshold;
+	}
+
+	/**
+	 * A boolean value that indicates if the request should return spans that
+	 * describe the scores for each part of the text (currently done at per-sentence
+	 * level). Defaults to false.
+	 * 
+	 * @return the spanAnnotations
+	 */
+	public Boolean getSpanAnnotations() {
+		return spanAnnotations;
 	}
 
 	/**
@@ -52,9 +68,11 @@ public class RequestedAttribute {
 	public static class Builder {
 		private ScoreType scoreType;
 		private Double scoreThreshold;
+		private Boolean spanAnnotations;
 
 		/**
 		 * Sets the score type of the attribute
+		 * 
 		 * @param scoreType the score type of the attribute
 		 * @return The builder
 		 */
@@ -65,6 +83,7 @@ public class RequestedAttribute {
 
 		/**
 		 * Sets the score threshold of the attribute
+		 * 
 		 * @param scoreThreshold the score threshold of the attribute
 		 * @return The builder
 		 */
@@ -72,9 +91,21 @@ public class RequestedAttribute {
 			this.scoreThreshold = scoreThreshold;
 			return this;
 		}
+		
+		/**
+		 * Sets the span annotations parameter. Defaults to true
+		 * 
+		 * @param spanAnnotations if span annotations should be returned
+		 * @return The builder
+		 */
+		public Builder spanAnnotations(Boolean spanAnnotations) {
+			this.spanAnnotations = spanAnnotations;
+			return this;
+		}
 
 		/**
 		 * Builds a new instance of RequestedAttribute
+		 * 
 		 * @return a new instance of RequestedAttribute
 		 */
 		public RequestedAttribute build() {
@@ -85,5 +116,6 @@ public class RequestedAttribute {
 	private RequestedAttribute(Builder builder) {
 		this.scoreType = builder.scoreType;
 		this.scoreThreshold = builder.scoreThreshold;
+		this.spanAnnotations = builder.spanAnnotations;
 	}
 }
