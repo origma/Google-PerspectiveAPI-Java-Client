@@ -289,5 +289,11 @@ public class AnalyzeCommentRequest {
 		this.clientToken = builder.clientToken;
 		this.sessionId = builder.sessionId;
 		this.suggestCommentScore = builder.suggestCommentScore;
+		
+		for(Map.Entry<AttributeType, RequestedAttribute> e: requestedAttributes.entrySet()) {
+			if(e.getValue() == null) {
+				e.setValue(new RequestedAttribute.Builder().build());
+			}
+		}
 	}
 }
